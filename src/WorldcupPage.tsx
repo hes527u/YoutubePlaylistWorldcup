@@ -87,7 +87,11 @@ const WorldcupPage: React.FC<WorldcupPageProps> = ({ playlistTitle, videos, roun
   };
 
   // 라운드/진행상황 표시
-  const roundLabel = `${Math.round(currentVideos.length / 2)}강 ${current + 1}/${totalMatches}`;
+  let roundText = Math.round(currentVideos.length / 2) + '강';
+  const roundNum = Math.round(currentVideos.length / 2);
+  if (roundNum === 2) roundText = '준결승';
+  if (roundNum === 1) roundText = '결승';
+  const roundLabel = `${roundText} ${current + 1}/${totalMatches}`;
 
   // YouTube 옵션: 자동재생, 음소거 시작
   const ytOpts = {
