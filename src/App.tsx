@@ -28,12 +28,8 @@ function AppMain() {
 
   // 라운드 버튼 생성 로직
   function getAvailableRounds(count: number): number[] {
-    if (count < 8) return [];
-    if (count < 16) return [8];
-    if (count < 32) return [8, 16];
-    if (count < 64) return [8, 16, 32];
-    if (count < 128) return [8, 16, 32, 64];
-    return [8, 16, 32, 64, 128];
+    const rounds = [8, 16, 32, 64, 128];
+    return rounds.filter(n => count >= n * 2);
   }
 
   const fetchPlaylistInfo = async (url: string) => {
@@ -88,7 +84,7 @@ function AppMain() {
 
   // n강 버튼 클릭 시 월드컵 페이지로 이동
   const handleRoundClick = (round: number) => {
-    // n*2개 랜덤 추출
+    // n*2개 랜덤 추출 (n강이면 32개)
     const shuffled = [...videos].sort(() => Math.random() - 0.5);
     const selected = shuffled.slice(0, round * 2);
     navigate('/worldcup', {
