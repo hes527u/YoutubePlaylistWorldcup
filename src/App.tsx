@@ -98,7 +98,7 @@ function AppMain() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: '#f9f9f9' }}>
-      <h1 style={{ marginBottom: 32 }}>유튜브 음악 이상형 월드컵</h1>
+      <h1 style={{ marginBottom: 32 }}>유튜브 재생목록 이상형 월드컵</h1>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 350 }}>
         <label htmlFor="playlist-url" style={{ fontWeight: 500, fontSize: 18 }}>유튜브 재생목록 URL을 입력하세요</label>
         <input
