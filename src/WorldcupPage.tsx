@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import YouTube, { YouTubePlayer } from 'react-youtube';
 import { useNavigate } from 'react-router-dom';
-import WinnerPage from './WinnerPage';
 
 interface Video {
   videoId: string;
